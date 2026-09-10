@@ -28,7 +28,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-const PORT =  process.env.PORT || 3000;
+const PORT =  process.env.PORT || 10000;
 app.use("/api/v1/user" , userRoute);
 app.use("/api/v1/company" , companyRoute);
 app.use("/api/v1/job", jobRoute);
@@ -38,7 +38,7 @@ app.use("/api/v1/application", applicationRoute);
 
 
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
     connectDB();  
      console.log(`Server running at port ${PORT}`);
 });
